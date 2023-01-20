@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+exec run-tests.sh --extra-scenarios "$(realpath "${BASH_SOURCE[0]%/*}/../scenarios.nix")" "$@"
