@@ -40,7 +40,8 @@ As soon as the bug is fixed, this module will be added to nix-bitcoin.
      }
 
      ```
-   - In a non-flakes config::
+   - In a non-flakes config (i.e., for users of the krops deployment method):\
+     Add another entry to `imports` at the top of your `configuration.nix`, like so:
      ```nix
      {
        imports = [
@@ -55,10 +56,12 @@ As soon as the bug is fixed, this module will be added to nix-bitcoin.
            # The hash is automatically shown when you evaluate your config.
            sha256 = "";
          })).nixosModules.default
-       ];
-       # ...
-     }
 
+         # Your other imports...
+       ];
+
+       # The rest of your node config...
+     }
      ```
 
 2. Edit your NixOS configuration
