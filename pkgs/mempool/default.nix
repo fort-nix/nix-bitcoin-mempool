@@ -17,26 +17,26 @@ rec {
   src = fetchFromGitHub {
     owner = "mempool";
     repo = "mempool";
-    rev = "5ff5275b362f0c45f460a536620af592da2f3d3a";
-    hash = "sha256-cQIXIFPGGowNfxezbp8igcE2/IjNsTODe5XlevP3LGw=";
+    rev = "v2.5.0";
+    hash = "sha256-8HmfytxRte3fQ0QKOljUVk9YAuaXhQQWuv3EFNmOgfQ=";
   };
 
   nodeModules = {
     frontend = fetchNodeModules {
       inherit src nodejs;
       preBuild = "cd frontend";
-      hash = "sha256-goRYK1xMgyZs3EvxejFCY09fM6LMsItD2XwPPJD9Flg=";
+      hash = "sha256-/Z0xNvob7eMGpzdUWolr47vljpFiIutZpGwd0uYhPWI=";
     };
     backend = fetchNodeModules {
       inherit src nodejs;
       preBuild = "cd backend";
-      hash = "sha256-ShB/vCr9HqETEp5wjg/R2HNKMbKfkxs5gfwgZpQeBhc=";
+      hash = "sha256-HpzzSTuSRWDWGbctVhTcUA01if/7OTI4xN3DAbAAX+U=";
     };
   };
 
   frontendAssets = fetchFiles {
     name = "mempool-frontend-assets";
-    hash = "sha256-ttfo5XwHN6y+F7+Nw/GelBP+lSGsBZ4xZXNkyla5Ocs=";
+    hash = "sha256-8byNa2Q2SC/59l9i9u4V2QcbVjLcj8E6ITRQFfRWNxw=";
     fetcher = ./scripts/frontend-assets-fetch.sh;
   };
 

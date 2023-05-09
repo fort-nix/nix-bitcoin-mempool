@@ -236,6 +236,7 @@ in {
 
   config = mkMerge [ (mkIf cfg.enable {
     services.bitcoind.txindex = true;
+    services.bitcoind.rpc.users.public.rpcwhitelist = [ "getindexinfo" ];
     services.electrs.enable = mkIf (cfg.electrumServer == "electrs" ) true;
     services.fulcrum.enable = mkIf (cfg.electrumServer == "fulcrum" ) true;
     services.mysql = {
