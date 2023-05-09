@@ -8,8 +8,8 @@ set -euo pipefail
 # This file is updated by ./frontend-assets-update.sh
 
 declare -A revs=(
-    ["blockstream/asset_registry_db"]=3d37769d29765689fb047f878f3e099c4b2383da
-    ["mempool/mining-pools"]=e73a42541eea345eb7bd65c02fa418778f0a909c
+    ["blockstream/asset_registry_db"]=be7ef2684b419966247e008d02f85611f7c038a6
+    ["mempool/mining-pools"]=08f03d516b0e5533312c5de73ab18d95be71dfc3
     ["mempool/mining-pool-logos"]=dba706617cb19f8d3b90a99060e62183dc360a6b
 )
 

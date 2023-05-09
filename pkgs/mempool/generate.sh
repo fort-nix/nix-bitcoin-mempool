@@ -5,9 +5,7 @@ set -euo pipefail
 # Use this to start a debug shell at the location of this statement
 # . $(nix eval --raw .#lib.nix-bitcoin --apply 'nb: "${nb + "/helper/start-bash-session.sh"}"')
 
-version=
-# master as of 2022-12-04
-rev=5ff5275b362f0c45f460a536620af592da2f3d3a
+version=2.5.0
 owner=mempool
 repo=https://github.com/$owner/mempool
 
