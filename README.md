@@ -110,4 +110,4 @@ Run all tests:
 nix flake check
 ```
 
-See also: [dev/dev.sh](./dev/dev.sh).
+Dev cmds: [dev/dev.sh](./dev/dev.sh).
