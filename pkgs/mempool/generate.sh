@@ -25,22 +25,23 @@ updateSrc() {
         git -C "$src" init
         git -C "$src" fetch --depth 1 "$repo" "$rev:src"
         git -C "$src" checkout src
-        version=$rev
     else
+        tag=v$version
         # Fetch and GPG-verify version tag
-        git clone --depth 1 --branch "$version" -c advice.detachedHead=false $repo "$src"
-        git -C "$src" checkout tags/$version
+        git clone --depth 1 --branch "$tag" -c advice.detachedHead=false $repo "$src"
+        git -C "$src" checkout tags/$tag
         export GNUPGHOME=$TMPDIR
         # Fetch wiz' key
         gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 913C5FF1F579B66CA10378DBA394E332255A6173 2> /dev/null
-        git -C "$src" verify-tag $version
+        git -C "$src" verify-tag $tag
+        rev=$tag
     fi
     rm -rf "$src"/.git
     hash=$(nix hash path "$src")
 
     sed -i "
       s|\bowner = .*;|owner = \"$owner\";|
-      s|\brev = .*;|rev = \"$version\";|
+      s|\brev = .*;|rev = \"$rev\";|
       s|\bhash = .*;|hash = \"$hash\";|
     " default.nix
 }
