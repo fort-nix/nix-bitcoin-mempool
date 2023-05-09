@@ -49,14 +49,14 @@ updateNodeModulesHash() {
     component=$1
     echo
     echo "Fetching node modules for mempool-$component"
-    ../../helper/update-fixed-output-derivation.sh ./default.nix mempool-"$component" "cd $component"
+    ./scripts/update-fixed-output-derivation.sh ./default.nix mempool-"$component" "cd $component"
 }
 
 updateFrontendAssets() {
-  . ./frontend-assets-update.sh
+  . ./scripts/frontend-assets-update.sh
   echo
   echo "Fetching frontend assets"
-  ../../helper/update-fixed-output-derivation.sh ./default.nix mempool-frontend.assets "frontendAssets"
+  ./scripts/update-fixed-output-derivation.sh ./default.nix mempool-frontend.assets "frontendAssets"
 }
 
 if [[ $# == 0 ]]; then

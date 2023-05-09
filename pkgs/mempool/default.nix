@@ -37,7 +37,7 @@ rec {
   frontendAssets = fetchFiles {
     name = "mempool-frontend-assets";
     hash = "sha256-ttfo5XwHN6y+F7+Nw/GelBP+lSGsBZ4xZXNkyla5Ocs=";
-    fetcher = ./frontend-assets-fetch.sh;
+    fetcher = ./scripts/frontend-assets-fetch.sh;
   };
 
   mempool-backend = mkDerivationMempool {
