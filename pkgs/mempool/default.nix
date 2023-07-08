@@ -1,7 +1,7 @@
 { lib
 , stdenvNoCC
-, nodejs-16_x
-, nodejs-slim-16_x
+, nodejs-18_x
+, nodejs-slim-18_x
 , fetchFromGitHub
 , fetchNodeModules
 , runCommand
@@ -11,8 +11,8 @@
 , rsync
 }:
 rec {
-  nodejs = nodejs-16_x;
-  nodejsRuntime = nodejs-slim-16_x;
+  nodejs = nodejs-18_x;
+  nodejsRuntime = nodejs-slim-18_x;
 
   src = fetchFromGitHub {
     owner = "mempool";
