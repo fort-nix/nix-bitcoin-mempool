@@ -1,5 +1,5 @@
 {
-  inputs.nix-bitcoin.url = "github:fort-nix/nix-bitcoin/release";
+  inputs.nix-bitcoin.url = "github:erikarvstedt/nix-bitcoin/nixos-23.05";
 
   outputs = { self, nix-bitcoin }: let
     inherit (nix-bitcoin.inputs)
