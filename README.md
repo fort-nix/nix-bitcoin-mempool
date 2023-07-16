@@ -2,19 +2,6 @@
 
 Mempool is a fully featured Bitcoin visualizer, explorer and API service.
 
-## Note
-
-Mempool currently [has a bug](https://github.com/mempool/mempool/issues/2246) where
-the Mempool backend stops serving Electrum server requests (like address queries)
-after running for 20-30 days.
-
-As a workaround, this module contains a helper service that auto-restarts the backend
-after one week.\
-This is configurable via option `mempool.autoRestartInterval`.\
-Sample values: `5 days`, `1 week` (default), `null` (to disable restarting).
-
-As soon as the bug is fixed, this module will be added to nix-bitcoin.
-
 ## Install
 
 1. Import the mempool module in your nix-bitcoin config.

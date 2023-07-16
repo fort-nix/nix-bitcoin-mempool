@@ -117,16 +117,6 @@ let
           description = mdDoc "Database name.";
         };
       };
-      autoRestartInterval = mkOption {
-        type = with types; nullOr string;
-        default = "1 week";
-        description = mdDoc ''
-          Interval after which the mempool backend is automatically restarted.
-
-          This works around a bug where the MEMPOOL backend stops serving Electrum
-          server requests (like address queries) after running for 20-30 days.
-        '';
-      };
       package = mkOption {
         type = types.package;
         default = nbPkgs.mempool-backend;
@@ -338,17 +328,6 @@ in {
       extraGroups = [ "bitcoinrpc-public" ];
     };
     users.groups.${cfg.group} = {};
-  })
-
-  (mkIf (cfg.enable && cfg.autoRestartInterval != null) {
-    systemd.timers.restart-mempool = {
-      wantedBy = [ "timers.target" ];
-      timerConfig.OnBootSec = cfg.autoRestartInterval;
-      timerConfig.OnUnitActiveSec = cfg.autoRestartInterval;
-    };
-    systemd.services.restart-mempool = {
-      script = "/run/current-system/systemd/bin/systemctl restart mempool";
-    };
   })
 
   (optionalAttrs (args.options.nix-bitcoin ? nodeinfo) {

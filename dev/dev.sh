@@ -39,9 +39,6 @@ run-tests-mempool -s netnsRegtest container
 c systemctl status mempool
 c journalctl -u mempool
 
-c systemctl status restart-mempool.timer
-c journalctl -u restart-mempool
-
 c systemctl status
 c systemctl status electrs
 c systemctl status mysql

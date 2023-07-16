@@ -13,9 +13,4 @@ tests.scenarios // {
     ];
     nix-bitcoin.nodeinfo.enable = true;
   };
-
-  testRestart = {
-    imports = [ tests.scenarios.default ];
-    services.mempool.autoRestartInterval = "10 s";
-  };
 }
