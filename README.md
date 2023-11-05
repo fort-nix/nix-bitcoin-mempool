@@ -1,4 +1,9 @@
-[Mempool](https://github.com/mempool/mempool) module for [nix-bitcoin](https://github.com/fort-nix/nix-bitcoin).
+[Mempool](https://github.com/mempool/mempool) is now a core [nix-bitcoin](https://github.com/fort-nix/nix-bitcoin) module.\
+This repo is still useful as an example of how to extend nix-bitcoin with Flakes.
+
+# Readme
+
+ [Mempool](https://github.com/mempool/mempool) module for [nix-bitcoin](https://github.com/fort-nix/nix-bitcoin).
 
 Mempool is a fully featured Bitcoin visualizer, explorer and API service.
 
